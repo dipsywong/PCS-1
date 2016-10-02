@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .box{
+        background-color:#FFFF80;
+        width:50px;
+        height:50px;
+        border:none;
+    }
+</style>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var txt=["SUN","MON","TUE","WED","THU","FRI","SAT"];
+    var d= new Date();
+    //d.setMonth(0);
+    var month=d.getMonth();
+    var day=d.getDay();
+    var date=d.getDate();    //1~31//
+    var x;
+    for (var i=1;i<32;i++){
+        //calenderWeekDay.append((day-i+70)%7+day);
+        //if (i%7==0){document.write(calenderWeekDay[])}
+        x=((i-date+70)%7+day)%7;
+        if (x%7==0) {document.write("<br>")};
+        //document.write("week day of "+i+" / "+(month+1)+" is "+txt[x]+"<br>");
+        if (i==1){
+            for (var j=0;j<x;j++){
+                document.write("<button class='box'></button>");
+            }
+        }
+        document.write("<button class='box'>"+i+"</button>");
+    }
+    for (var j=x;j<6;j++){
+        document.write("<button class='box'></button>");
+    }
+    document.write();
+</script>
+
+</body>
+</html>
